@@ -1,4 +1,5 @@
 # Dieses Projekt dient zum Lernen des Umgangs mit GRPC, mTLS und TLS. 
+Über die Shellskripte lässt sich jeder Aspekt testen. Die Zertifikate können auch über Skripte erzeugt werden. Openssl wird vorrausgesetzt.
 
 # Docker Container Erstellen
 sudo DOCKER_BUILDKIT=1 docker build -t go-plz:v1 .
