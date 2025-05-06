@@ -1,3 +1,5 @@
+# Dieses Projekt dient zum Lernen des Umgangs mit GRPC, mTLS und TLS. 
+
 # Docker Container Erstellen
 sudo DOCKER_BUILDKIT=1 docker build -t go-plz:v1 .
 
