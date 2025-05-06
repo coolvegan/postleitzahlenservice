@@ -1,0 +1,19 @@
+[Unit]
+Description=GO Postleitzahlen Service
+After=network.target
+
+[Service]
+Type=simple
+User=marco
+Group=marco
+WorkingDirectory=/home/marco/go-plz
+ExecStart=/home/marco/
+Restart=always
+RestartSec=10
+Environment="RPCTYPE=TLS"
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=go-plz
+
+[Install]
+WantedBy=multi-user.target

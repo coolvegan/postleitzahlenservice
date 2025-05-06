@@ -1,0 +1,38 @@
+
+syntax = "proto3";
+option go_package = "/stadtservice";
+
+package stadteInformationen;
+
+message StadtInfo{
+    string locationId = 1;
+    string stadtname = 2;
+    string postleitzahl = 3;
+    double breitengrad = 4;
+    double langengrad = 5;
+}
+
+message PostleitzahlenSuchbegriff{
+    string plzprefix = 1;
+}
+
+message Postleitzahl{
+    string postleitzahl = 1;
+}
+
+message StadtSuchbegriff{
+    string stadtname = 1;
+}
+
+message Stadtname{
+    string stadtname = 1;
+}
+
+
+
+service StadteInformationen {
+    rpc SucheNachAnteilEinerPostleitzahl(PostleitzahlenSuchbegriff) returns (stream Postleitzahl);
+    rpc SucheNachAnteilEinesStadtnamen(StadtSuchbegriff) returns (stream Stadtname);
+    rpc SucheNachExakenStadtnamen(StadtSuchbegriff) returns (stream StadtInfo);
+    rpc SucheNachExtakerPostleitzahl(Postleitzahl) returns (StadtInfo);
+}
